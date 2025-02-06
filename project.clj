@@ -50,11 +50,13 @@
                             :dependencies [[seancorfield/next.jdbc "1.1.610"]]}
              :feature/sqlite [:feature/jdbc {:dependencies [[org.xerial/sqlite-jdbc "3.36.0.3"]]}]
              :feature/postgresql [:feature/jdbc {:dependencies [[org.postgresql/postgresql "42.2.18"]]}]
-             ;:feature/oracledb [:feature/jdbc {:dependencies [[com.oracle.database.jdbc/ojdbc8 "19.8.0.0"]]}]
+                                        ;:feature/oracledb [:feature/jdbc {:dependencies [[com.oracle.database.jdbc/ojdbc8 "19.8.0.0"]]}]
              :feature/oracledb [:feature/jdbc {:dependencies [[io.helidon.integrations.db/ojdbc "2.1.0"]]}] ; ojdbc10 + GraalVM config, by Oracle
              :feature/hsqldb [:feature/jdbc {:dependencies [[org.hsqldb/hsqldb "2.5.1"]]}]
              :feature/csv {:source-paths ["feature-csv"]
                            :dependencies [[org.clojure/data.csv "1.0.0"]]}
+             :feature/data-json {:source-paths ["feature-data-json"]
+                                 :dependencies [[org.clojure/data.json "2.5.1"]]}
              :feature/transit {:source-paths ["feature-transit"]
                                :dependencies [[com.cognitect/transit-clj "1.0.333"]]}
              :feature/datascript {:source-paths ["feature-datascript"]
@@ -86,6 +88,7 @@
                     :feature/postgresql
                     :feature/hsqldb
                     :feature/csv
+                    :feature/data-json
                     :feature/transit
                     :feature/datascript
                     :feature/httpkit-client
