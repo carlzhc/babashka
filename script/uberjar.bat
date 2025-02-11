@@ -58,6 +58,12 @@ if not "%BABASHKA_FEATURE_CSV%"=="false" (
   set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,-feature/csv
 )
 
+if not "%BABASHKA_FEATURE_DATA_JSON%"=="false" (
+  set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,+feature/data-json
+) else (
+  set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,-feature/data-json
+)
+
 if not "%BABASHKA_FEATURE_TRANSIT%"=="false" (
   set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,+feature/transit
 ) else (
