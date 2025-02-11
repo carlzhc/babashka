@@ -94,6 +94,7 @@ Babashka supports the following feature flags:
 | Name   |  Description                                 | Default  |
 |--------|----------------------------------------------|----------|
 | `BABASHKA_FEATURE_CSV` | Includes the [clojure.data.csv](https://github.com/clojure/data.csv) library | `true` |
+| `BABASHKA_FEATURE_DATA_JSON` | Includes the [clojure.data.json](https://github.com/clojure/data.json) library | `false` |
 | `BABASHKA_FEATURE_JAVA_NET_HTTP` | Includes commonly used classes from the `java.net.http` package | `true` |
 | `BABASHKA_FEATURE_JAVA_NIO` | Includes commonly used classes from the `java.nio` package | `true` |
 | `BABASHKA_FEATURE_JAVA_TIME` | Includes commonly used classes from the `java.time` package | `true` |

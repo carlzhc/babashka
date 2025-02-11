@@ -269,6 +269,7 @@ Use bb run --help to show this help output.
 {:babashka/version   \"%s\"
  :git/sha            \"%s\"
  :feature/csv        %s
+ :feature/data-json  %s
  :feature/java-nio   %s
  :feature/java-time  %s
  :feature/xml        %s
@@ -290,6 +291,7 @@ Use bb run --help to show this help output.
     version
     build-commit-sha
     features/csv?
+    features/data-json?
     features/java-nio?
     features/java-time?
     features/xml?
@@ -450,6 +452,7 @@ Use bb run --help to show this help output.
                           'next.jdbc.sql @(resolve 'babashka.impl.jdbc/next-sql-namespace)
                           'next.jdbc.result-set @(resolve 'babashka.impl.jdbc/result-set-namespace))
     features/csv? (assoc 'clojure.data.csv @(resolve 'babashka.impl.csv/csv-namespace))
+    features/data-json? (assoc 'clojure.data.json @(resolve 'babashka.impl.data.json/data-json-namespace))
     features/transit? (assoc 'cognitect.transit @(resolve 'babashka.impl.transit/transit-namespace))
     features/datascript? (assoc 'datascript.core @(resolve 'babashka.impl.datascript/datascript-namespace)
                                 'datascript.db @(resolve 'babashka.impl.datascript/datascript-db-namespace))

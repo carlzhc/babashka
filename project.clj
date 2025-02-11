@@ -61,6 +61,8 @@
              :feature/hsqldb [:feature/jdbc :hsqldb/deps]
              :feature/csv {:source-paths ["feature-csv"]
                            :dependencies [[org.clojure/data.csv "1.0.0"]]}
+             :feature/data-json {:source-paths ["feature-data-json"]
+                                 :dependencies [[org.clojure/data.json "2.5.1"]]}
              :feature/transit {:source-paths ["feature-transit"]
                                :dependencies [[com.cognitect/transit-clj "1.0.333"]]}
              :feature/datascript {:source-paths ["feature-datascript"]
@@ -96,6 +98,7 @@
                     :feature/postgresql
                     :feature/hsqldb
                     :feature/csv
+                    :feature/data-json
                     :feature/transit
                     :feature/datascript
                     :feature/httpkit-client
