@@ -18,8 +18,13 @@ then
     echo "Please run script/uberjar first."
     exit 1
 fi
+native_image="$GRAALVM_HOME/bin/native-image"
 
-if [[ ! -x "$GRAALVM_HOME/bin/native-image" ]]; then
+if [[ $MSYSTEM ]]; then
+    native_image="$GRAALVM_HOME/bin/native-image.cmd"
+fi
+
+if [[ ! -f "$native_image" ]]; then
     "$GRAALVM_HOME/bin/gu" install native-image
 fi
 
@@ -33,6 +38,7 @@ BABASHKA_BINARY=${BABASHKA_BINARY:-"bb"}
 
 args=("-jar" "$BABASHKA_JAR"
       "-H:Name=$BABASHKA_BINARY"
+      "-H:+UnlockExperimentalVMOptions"
       "-H:+ReportExceptionStackTraces"
       # "-H:+PrintAnalysisCallTree"
       # "-H:+DashboardAll"
@@ -40,6 +46,7 @@ args=("-jar" "$BABASHKA_JAR"
       # "-H:+DashboardPretty"
       # "-H:+DashboardJson"
       # "-H:ReportAnalysisForbiddenType=java.awt.Toolkit:Instantiated"
+      "-H:-CheckToolchain"
       "--verbose"
       "--no-fallback"
       "--native-image-info"
@@ -115,6 +122,6 @@ then
     fi
 fi
 
-"$GRAALVM_HOME/bin/native-image" "${args[@]}" "$@"
+"$native_image" "${args[@]}" "$@"
 
 ./"$BABASHKA_BINARY" describe
