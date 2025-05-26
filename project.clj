@@ -63,6 +63,8 @@
                            :dependencies [[org.clojure/data.csv "1.0.0"]]}
              :feature/transit {:source-paths ["feature-transit"]
                                :dependencies [[com.cognitect/transit-clj "1.0.333"]]}
+             :feature/clj-bom {:source-paths ["feature-clj-bom"]
+                               :dependencies [[clj-bom "0.1.2"]]}
              :feature/datascript {:source-paths ["feature-datascript"]
                                   :dependencies [[datascript "1.3.10"]]}
              :feature/httpkit-client {:source-paths ["feature-httpkit-client"]
@@ -96,6 +98,7 @@
                     :feature/postgresql
                     :feature/hsqldb
                     :feature/csv
+                    :feature/clj-bom
                     :feature/transit
                     :feature/datascript
                     :feature/httpkit-client

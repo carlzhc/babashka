@@ -64,6 +64,12 @@ if not "%BABASHKA_FEATURE_TRANSIT%"=="false" (
   set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,-feature/transit
 )
 
+if not "%BABASHKA_FEATURE_CLJ_BOM%"=="false" (
+  set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,+feature/clj-bom
+) else (
+  set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,-feature/clj-bom
+)
+
 if "%BABASHKA_FEATURE_DATASCRIPT%"=="true" (
   set BABASHKA_LEIN_PROFILES=%BABASHKA_LEIN_PROFILES%,+feature/datascript
 ) else (
