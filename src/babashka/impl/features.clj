@@ -28,6 +28,7 @@
 (def lanterna? (= "true" (System/getenv "BABASHKA_FEATURE_LANTERNA")))
 (def spec-alpha? (= "true" (System/getenv "BABASHKA_FEATURE_SPEC_ALPHA")))
 (def rrb-vector? (= "true" (System/getenv "BABASHKA_FEATURE_RRB_VECTOR")))
+(def clj-bom? (= "true" (System/getenv "BABASHKA_FEATURE_CLJ_BOM")))
 
 (when xml?
   (require '[babashka.impl.xml]))
@@ -80,3 +81,6 @@
 
 (when rrb-vector?
   (require '[babashka.impl.rrb-vector]))
+
+(when clj-bom?
+  (require '[babashka.impl.clj.bom]))
