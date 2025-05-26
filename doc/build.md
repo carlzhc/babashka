@@ -97,6 +97,7 @@ Babashka supports the following feature flags:
 | `BABASHKA_FEATURE_JAVA_NET_HTTP` | Includes commonly used classes from the `java.net.http` package | `true` |
 | `BABASHKA_FEATURE_JAVA_NIO` | Includes commonly used classes from the `java.nio` package | `true` |
 | `BABASHKA_FEATURE_JAVA_TIME` | Includes commonly used classes from the `java.time` package | `true` |
+| `BABASHKA_FEATURE_CLJ_BOM` | Includes the [clj-bom](https://github.com/jimpil/clj-bom) library | `false` |
 | `BABASHKA_FEATURE_TRANSIT` | Includes the [transit-clj](https://github.com/cognitect/transit-clj) library | `true` |
 | `BABASHKA_FEATURE_XML` | Includes the [clojure.data.xml](https://github.com/clojure/data.xml) library | `true` |
 | `BABASHKA_FEATURE_YAML` | Includes the [clj-yaml](https://github.com/clj-commons/clj-yaml) library | `true` |
