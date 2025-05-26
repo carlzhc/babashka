@@ -30,6 +30,7 @@ update.1:
 	git checkout msys2; git rebase master; git push --force
 	for ref in `git branch --format='%(refname)'`; do
 	  br=$${ref##*/}
+	  [[ $${br} == feature-* ]] || continue
 	  git checkout $${br}
 	  git rebase msys2
 	  git diff --unified=0 msys2 | tee $${br}.patch
